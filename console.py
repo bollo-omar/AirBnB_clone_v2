@@ -126,10 +126,17 @@ class HBNBCommand(cmd.Cmd):
         print(new_instance.id)
         storage.save()
 
-    def help_create(self):
-        """ Help information for the create method """
-        print("Creates a class of any type")
-        print("[Usage]: create <className>\n")
+    def do_create(self, args):
+        """Usage: create <class> <key 1>=<value 2> <key 2>=<value 2> ...
+        Create a new class instance with given keys/values and print its id.
+        """
+        args_list = args.split()
+        if not args:
+            print("** class name missing **")
+            return
+        if args_list[0] not in HBNBCommand.classes:
+            print("** class doesn't exist **")
+            return
 
     def do_show(self, args):
         """ Method to show an individual object """
