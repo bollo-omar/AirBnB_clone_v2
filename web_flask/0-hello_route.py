@@ -7,7 +7,7 @@ app.url_map.strict_slashes = False
 
 @app.route('/airbnb-onepage/')
 def hello():
-    return 'Hello, AirBnB!'
+    return 'Hello HBNB!'
 
 @app.route('/')
 def hello_hbnb():
